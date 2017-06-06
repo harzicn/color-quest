@@ -7,6 +7,7 @@
 
     // Scenes
     // put some common scene logic into scene object
+
     var scene = {
         node: document.querySelector('.scene'),
         show: function(){
@@ -39,11 +40,11 @@
         /* extra */
         // add the class for the out effect
         // var questView = document.getElementById('quest');
-        // questViw.classList.add('out');
+        // questView.classList.add('out');
         /* end extra */
     }
 
-    // start scene
+    // Start Scene
     var startScene = game.startScene = Object.create(scene);
     startScene.node = document.getElementById('start-scene');
     startScene.handleInput = function(){
@@ -51,6 +52,8 @@
             game.flow.nextLevel();
         };
     };
+
+    // Level Completed Summary Scene
     var summaryScene = game.summaryScene = Object.create(scene);
     summaryScene.node = document.getElementById('summary-scene');
     summaryScene.handleInput = function(){
@@ -58,6 +61,8 @@
             game.flow.nextLevel();
         };
     };
+
+    // Game Over Scene
     var gameoverScene = game.gameoverScene = Object.create(scene);
     gameoverScene.node = document.getElementById('gameover-scene');
     gameoverScene.handleInput = function(){
