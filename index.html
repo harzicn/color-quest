@@ -4,6 +4,7 @@
     <meta charset='utf-8'>
     <title>Color Quest</title>
     <link rel="stylesheet" href="game.css">
+
 </head>
 <body>
 <header>
@@ -13,8 +14,10 @@
 </header>
 <section id="game" class="row">
     <div id="game-scene" class="scene out">
-        <a href="#" id="gameover-btn">Game Over</a>
-        <a href="#" id="finish-btn">Finish</a>
+        <div id="stage">Stage 1</div>
+        <div id='quest' class="quest">
+            <div id="quest-composition" class="composition"></div>
+        </div>
     </div>
     <div id="start-scene" class="scene">
         <a href="#" id="start-btn" class="button">Start Game</a>
@@ -35,9 +38,16 @@
         <p>Copyright goes here.</p>
     </div>
 </footer>
-<link rel="stylesheet" href="game.css">
-<link rel="stylesheet" href="">
 
+<div id='element-template'>
+    <!-- for composition view -->
+    <div class="pattern" data-pattern='1'></div>
+</div>
+
+<script src='js/patch.js'></script>
+<script src='js/composition.js'></script>
+<script src='js/quest.js'></script>
+<script src='js/scenes.js'></script>
 <script src='js/game.js'></script>
 </body>
 </html>

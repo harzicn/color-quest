@@ -1,13 +1,19 @@
 /**
  * Created by harzicn on 31/05/2017.
+ * controls the game flow
  * anonymous function to put all variables local scope by default.
  */
 (function () {
-
+    /**
+     * create one global variable game named colorQuestGame to act as the namespace
+     * the following declaration mans that by default it will use the existing
+     * colorQuestGame variable if it was declared previously. Otherwise it will be
+     * a new empty object {}. This declaration should go into every file.
+     */
         var game = window.colorQuestGame = window.colorQuestGame || {};
-
-        // Main Game Logic
+    // Main Game Logic
         game.flow = {
+            currentLevel: 3,
             startOver: function () {
                 game.startScene.hide();
                 game.summaryScene.hide();
@@ -32,8 +38,12 @@
             finishLevel: function () {
                 game.gameScene.hide();
                 game.summaryScene.show();
-            }
-        }
+            },
+            startLevel: function () {
+                game.quest = new game.Quest(this.currentLevel);
+                game.gameScene.visualize(game.quest);
+            },
+        };
 
     //Entry Point
     var init = function () {
